@@ -12,6 +12,7 @@
     <body>
     <div class="container">
         <?php
+            include 'navbar.php';
         	include './models/dbconnect.php';
         	include './models/util.php';
         	include './models/validation.php';
