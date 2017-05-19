@@ -50,10 +50,10 @@ try {
             
 
             if ($resourceData->post($serverData)) {
-                $restServer->setMessage('Address Added');
+                $restServer->setMessage('Corp Added');
                 $restServer->setStatus(201);
             } else {
-                throw new Exception('Address could not be added');
+                throw new Exception('Corp could not be added');
             }
         
         }
@@ -63,6 +63,24 @@ try {
             
             if ( NULL === $id ) {
                 throw new InvalidArgumentException('Corp ID ' . $id . ' was not found');
+            } else if($resourceData->put($id, $serverData)){
+                $restServer->setMessage('Corp Updated');
+                $restServer->setStatus(202);
+            } else {
+                throw new Exception('Corp could not be updated');
+            }
+            
+        }
+
+        if ( 'DELETE' === $verb ) {
+            
+            if ( NULL === $id ) {
+                throw new InvalidArgumentException('Corp ID ' . $id . ' was not found');
+            } else if($resourceData->delete($id)){
+                $restServer->setMessage('Corp deleted');
+                $restServer->setStatus(202);
+            } else {
+                throw new Exception('Corp could not be deleted');
             }
             
         }
