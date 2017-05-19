@@ -19,7 +19,9 @@ class DB {
     * @param {Array} [$dbConfig] - Database config
     */    
     public function __construct($dbConfig) {
-        $this->setDbConfig($dbConfig);      
+        
+            $this->setDbConfig($dbConfig);
+
     }
     
     private function getDbConfig() {
@@ -27,7 +29,11 @@ class DB {
     }
 
     private function setDbConfig($dbConfig) {
-        $this->dbConfig = $dbConfig;
+        if(is_array($dbConfig)){
+            $this->dbConfig = $dbConfig;
+        } else {
+            throw new ArrayException('$dbConfig must be an Array');
+        }  
     }
     
     /**

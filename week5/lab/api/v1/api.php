@@ -28,9 +28,9 @@ try {
      * But in this example we will just code it out.
      * 
      */
-    if ( 'address' === $resource ) {
+    if ( 'corps' === $resource ) {
         
-        $resourceData = new AddressResource();
+        $resourceData = new CorpsResource();
         
         if ( 'GET' === $verb ) {
             
@@ -62,7 +62,7 @@ try {
         if ( 'PUT' === $verb ) {
             
             if ( NULL === $id ) {
-                throw new InvalidArgumentException('Address ID ' . $id . ' was not found');
+                throw new InvalidArgumentException('Corp ID ' . $id . ' was not found');
             }
             
         }

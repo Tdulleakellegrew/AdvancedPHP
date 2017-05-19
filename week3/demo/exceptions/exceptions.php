@@ -42,6 +42,8 @@
            $db = new DB($dbConfig);
            $pdo = $db->getDB();
            
+        } catch (ArrayException $e){
+            echo '<br /> Caught ArrayException: ',  $e->getMessage(), "\n";
         } catch (DBException $e) {
             echo '<br /> Caught DBException: ',  $e->getMessage(), "\n";
         }
