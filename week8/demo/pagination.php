@@ -8,7 +8,7 @@
         <?php
         // put your code here
        
-        $db = new PDO('mysql:host=localhost;port=3306;dbname=PHPAdvClassSpring2016', 'root', '');
+        $db = new PDO('mysql:host=localhost;port=3306;dbname=PHPAdvClassSpring2017', 'root', '');
         $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);         
         $stmt = $db->prepare("SELECT * FROM corps");
         $results = array();      
